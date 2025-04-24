@@ -1,6 +1,6 @@
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
-import VitePWA from "@vite-pwa/astro";
+import AstroPWA from "@vite-pwa/astro";
 // @ts-check
 import { defineConfig } from "astro/config";
 
@@ -12,18 +12,23 @@ export default defineConfig({
 
 	integrations: [
 		react(),
-		VitePWA({
+		AstroPWA({
 			injectRegister: "auto",
 			registerType: "autoUpdate",
+			workbox: {
+				globDirectory: "dist",
+				globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+			},
 			includeAssets: ["favicon.ico", "apple-touch-icon.png"],
 			manifest: {
 				name: "Media Player",
-				short_name: "App",
-				description: "Mi aplicación en Astro con PWA",
+				short_name: "Media Player",
+				description: "Reproductor de Audio",
 				theme_color: "#0f172a",
 				start_url: "/",
-				background_color: "#ffffff",
+				background_color: "#0f172a",
 				display_override: ["window-controls-overlay", "standalone"],
+				id: "/",
 				display: "standalone",
 				icons: [
 					{

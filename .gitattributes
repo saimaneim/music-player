@@ -1,5 +1,5 @@
 * text=auto
-*.sln text eol=crlf
+*.sln text eol=lf
 *.c text
 *.h text
 *.png binary

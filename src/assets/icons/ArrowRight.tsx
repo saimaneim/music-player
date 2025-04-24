@@ -8,7 +8,7 @@ const ArrowRightIcon = () => {
 			stroke="currentColor"
 			className="size-6"
 		>
-            <title>Arrow Right</title>
+			<title>Arrow Right</title>
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"

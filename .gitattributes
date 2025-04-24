@@ -1,2 +1,6 @@
-# Declare files that will always have CRLF line endings on checkout.
+* text=auto
 *.sln text eol=crlf
+*.c text
+*.h text
+*.png binary
+*.jpg binary

@@ -7,7 +7,6 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"format": "biome format --fix",
 		"lint": "biome check --fix"
 	},
 	"dependencies": {
@@ -18,6 +17,7 @@
 		"astro": "5.7.5",
 		"react": "19.1.0",
 		"react-dom": "19.1.0",
+		"tailwind-merge": "3.2.0",
 		"tailwindcss": "4.1.4"
 	},
 	"devDependencies": {

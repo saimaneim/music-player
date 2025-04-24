@@ -18,7 +18,7 @@
 		"enabled": true
 	},
 	"linter": {
-		"ignore": [".astro"],
+		"ignore": [".astro", "dist"],
 		"enabled": true,
 		"rules": {
 			"recommended": true

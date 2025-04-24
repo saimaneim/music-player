@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+	--primary-text: oklch(100.00% 0.0 0);
+	--primary: oklch(66.39% 0.143 282.24);
+	--secundary: oklch(31.18% 0.193 267.74);
+	--accent: oklch(45.71% 0.297 266.38);
+	--background: oklch(15.17% 0.046 281.7);
+}
+
+@theme {
+	--color-primary: var(--primary);
+	--color-background: var(--background);
+}
+
+@layer base {
+	* {
+		color: var(--primary-text);
+	}
+}

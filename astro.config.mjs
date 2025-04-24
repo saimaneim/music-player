@@ -15,7 +15,7 @@ export default defineConfig({
 		VitePWA({
 			injectRegister: "auto",
 			registerType: "autoUpdate",
-			includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
+			includeAssets: ["favicon.ico", "apple-touch-icon.png"],
 			manifest: {
 				name: "Media Player",
 				short_name: "App",

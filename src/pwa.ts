@@ -1,10 +1,12 @@
 import { registerSW } from "virtual:pwa-register";
-
-registerSW({
-	onRegisteredSW(swScriptUrl) {
-		console.log("SW registered: ", swScriptUrl);
-	},
-	onOfflineReady() {
-		console.log("PWA application ready to work offline");
-	},
-});
+if ("serviceWorker" in navigator) {
+	registerSW({
+		immediate: true,
+		onRegisteredSW() {
+			console.log("SW registrado");
+		},
+		onOfflineReady() {
+			console.log("Offline listo");
+		},
+	});
+}

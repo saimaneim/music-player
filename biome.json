@@ -18,8 +18,6 @@
 		"enabled": true
 	},
 	"linter": {
-		"include": ["src/**"],
-		"ignore": ["dist", "dev-dist", ".vscode", ".astro", "node_modules"],
 		"enabled": true,
 		"rules": {
 			"recommended": true

@@ -24,10 +24,10 @@ export default defineConfig({
 				name: "Media Player",
 				short_name: "Media Player",
 				description: "Reproductor de Audio",
-				theme_color: "#0f172a",
+				theme_color: "#09081e",
 				start_url: "/",
 				id: "",
-				background_color: "#0f172a",
+				background_color: "#09081e",
 				display: "standalone",
 				icons: [
 					{

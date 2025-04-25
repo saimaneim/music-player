@@ -8,6 +8,7 @@ const Albums = () => {
 	const { setTrack } = usePlayerStore();
 
 	async function getDir() {
+		// @ts-ignore
 		const dirHandle = await window.showDirectoryPicker({
 			mode: "read",
 			startIn: "music",
@@ -35,11 +36,13 @@ const Albums = () => {
 			if (!handle) {
 				console.log("No se encontró ninguna carpeta almacenada.");
 			} else {
+				// @ts-ignore
 				const permiso = await handle.queryPermission({ mode: "read" });
 				if (permiso !== "granted") {
 					alert("Permiso no concedido para la carpeta almacenada");
 					console.log("Permiso no concedido para la carpeta almacenada.");
 				} else {
+					// @ts-ignore
 					for await (const [name, handl] of handle.entries()) {
 						if (handl.kind === "file" && name.endsWith(".mp3")) {
 							const file = await handl.getFile();

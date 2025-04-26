@@ -1,4 +1,4 @@
-import Albums from "../components/Albums/Albums";
+import Albums from "@/components/Albums/Albums";
 import PermissionButton from "@/components/PermissionButon/PermissionButton";
 import PlayerBar from "@/components/PlayerBar/PlayerBar";
 

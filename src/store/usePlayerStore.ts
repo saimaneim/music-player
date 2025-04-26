@@ -8,7 +8,7 @@ interface Track {
 	picture?: string;
 }
 
-interface PlayerState {
+interface PlayerStateProps {
 	isPlaying: boolean;
 	track: Track;
 	currentTime: number;
@@ -17,7 +17,7 @@ interface PlayerState {
 	setTrack: (track: Track) => void;
 }
 
-const usePlayerStore = create<PlayerState>((set) => ({
+const usePlayerStore = create<PlayerStateProps>((set) => ({
 	isPlaying: false,
 	currentTime: 0,
 	track: {

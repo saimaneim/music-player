@@ -5,8 +5,10 @@ import PlayerBar from "@/components/PlayerBar/PlayerBar";
 export default function Index() {
 	return (
 		<main>
-			<Albums />
-			<PermissionButton />
+			<div className="flex flex-col gap-10 p-4">
+				<Albums />
+				<PermissionButton />
+			</div>
 			<PlayerBar />
 		</main>
 	);

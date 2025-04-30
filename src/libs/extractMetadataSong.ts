@@ -4,11 +4,12 @@ import * as mm from "music-metadata";
  * Metadata returned by extractMetadataSong
  */
 export interface SongMetadata {
-	title?: string;
+	title: string;
 	artist?: string;
 	album?: string;
 	duration?: number; // in seconds
 	picture?: string; // data URL
+	file: Blob | null;
 }
 
 /**
@@ -30,10 +31,11 @@ export async function extractMetadataSong(file: Blob): Promise<SongMetadata> {
 	}
 
 	return {
-		title: common.title,
+		title: common.title || "Not found",
 		artist: common.albumartist,
 		album: common.album,
 		duration: Number(format.duration?.toFixed(3)),
 		picture: pictureDataUrl,
+		file: file,
 	};
 }

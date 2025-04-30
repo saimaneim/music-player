@@ -1,20 +1,12 @@
+import type { SongMetadata } from "@/libs/extractMetadataSong";
 import { create } from "zustand";
-
-interface Track {
-	title?: string;
-	artist?: string;
-	album?: string;
-	duration?: number;
-	picture?: string;
-}
 
 interface PlayerStateProps {
 	isPlaying: boolean;
-	track: Track;
+	track: SongMetadata;
 	currentTime: number;
-
 	togglePlay: () => void;
-	setTrack: (track: Track) => void;
+	setTrack: (track: SongMetadata) => void;
 }
 
 const usePlayerStore = create<PlayerStateProps>((set) => ({
@@ -26,6 +18,7 @@ const usePlayerStore = create<PlayerStateProps>((set) => ({
 		artist: "",
 		duration: 0,
 		title: "",
+		file: null,
 	},
 
 	togglePlay: () => set((state) => ({ isPlaying: !state.isPlaying })),

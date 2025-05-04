@@ -21,10 +21,10 @@ export default defineConfig({
 				name: "Music Player",
 				short_name: "Music Player",
 				description: "Reproductor de Audio",
-				theme_color: "#09081e",
+				theme_color: "#000000",
 				start_url: "/",
 				id: "",
-				background_color: "#09081e",
+				background_color: "#000000",
 				display: "standalone",
 				icons: [
 					{

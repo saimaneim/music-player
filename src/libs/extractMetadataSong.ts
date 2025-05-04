@@ -32,7 +32,7 @@ export async function extractMetadataSong(file: Blob): Promise<SongMetadata> {
 
 	return {
 		title: common.title || "Not found",
-		artist: common.albumartist,
+		artist: common.artist,
 		album: common.album,
 		duration: Number(format.duration?.toFixed(3)),
 		picture: pictureDataUrl,

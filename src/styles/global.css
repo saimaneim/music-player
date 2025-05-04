@@ -1,28 +1,44 @@
 @import "tailwindcss";
 
 :root {
-	--primary-text: oklch(100% 0 0);
-	--primary: oklch(66.39% 0.143 282.24);
-	--secundary: oklch(45% 0.085 224.283);
-	--accent: oklch(45.71% 0.297 266.38);
-	--background: oklch(15.17% 0.046 281.7);
+	--color-primary: oklch(0.83 0.09006 302.6673);
+	--color-secondary: oklch(0.31 0.0093 268.37);
+	--color-background: oklch(0 0 0);
+	--color-text-primary: oklch(100% 0 0);
+	--color-text-secondary: oklch(80% 0.02 270);
+	--color-text-muted: oklch(70% 0.01 270);
+	--color-destructive: oklch(60% 0.18 27);
 }
 
 @theme {
-	--color-primary: var(--primary);
-	--color-secundary: var(--secundary);
-	--color-background: var(--background);
-	--color-accent: var(--accent);
+	--color-primary: var(--color-primary);
+	--color-secondary: var(--color-secondary);
+	--color-background: var(--color-background);
+	--color-text-primary: var(--color-text-primary);
+	--color-text-secondary: var(--color-text-secondary);
+	--color-text-muted: var(--color-text-muted);
+	--color-destructive: var(--color-destructive);
 }
 
 @layer base {
 	* {
-		color: var(--primary-text);
+		color: var(--color-text-primary);
 	}
 
 	:root {
-		background-color: var(--background);
+		background-color: var(--color-background);
 		-webkit-user-select: none;
 		user-select: none;
 	}
+}
+
+/* ========== Hide scrollbars ========== */
+
+*::-webkit-scrollbar {
+	display: none;
+}
+
+* {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
 }

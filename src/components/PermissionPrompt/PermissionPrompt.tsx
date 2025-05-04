@@ -7,31 +7,27 @@ const PermissionPrompt = () => {
 	const { pickFolder } = useFolderAccess();
 	const [visible, setVisible] = useState(false);
 	const isDev = process.env.NODE_ENV === "development";
+	const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
 	const checkAccess = async () => {
-		if (!isDev) {
-			setVisible(false);
-			return;
+		if (isMobile && isDev) {
+			setVisible(true);
 		}
 
 		try {
 			const handle: FileSystemDirectoryHandle = await get("dirHandle");
 			// @ts-ignore
-			if (!handle || typeof handle.queryPermission !== "function") {
+			if (!handle) {
 				setVisible(true);
 				return;
 			}
 			// @ts-ignore
-			let perm: PermissionState = await handle.queryPermission();
-			if (
-				perm !== "granted" &&
-				// @ts-ignore
-				typeof handle.requestPermission === "function"
-			) {
-				// @ts-ignore
-				perm = await handle.requestPermission({ mode: "readwrite" });
+			const perm: PermissionState = await handle.queryPermission();
+			if (perm !== "granted") {
+				setVisible(true);
+			} else {
+				setVisible(false);
 			}
-			setVisible(perm !== "granted");
 		} catch {
 			setVisible(true);
 		}

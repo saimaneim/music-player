@@ -27,6 +27,7 @@ const PlayerBar = () => {
 		audio.play();
 	}, [track, isPlaying]);
 
+	if (!track.file) return;
 	return (
 		<section className="fixed bottom-0 left-0 z-50 bg-clip-padding backdrop-filter px-5 py-3 grid grid-row-2 grid-col-1 gap-2 items-center w-screen rounded-t-xl bg-background ">
 			<span className="grid grid-row-2 grid-col-2 space-x-2 justify-start items-end">

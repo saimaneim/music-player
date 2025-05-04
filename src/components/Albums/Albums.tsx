@@ -15,7 +15,7 @@ import { twMerge } from "tailwind-merge";
 
 const Albums = () => {
 	// store
-	const { setTrack, togglePlay } = usePlayerStore();
+	const { setTrack, togglePlay, track } = usePlayerStore();
 	const { folders } = useFolderStore();
 	const { files } = useFilestore();
 
@@ -69,9 +69,10 @@ const Albums = () => {
 			</div>
 			{metaFiles.length > 0 && (
 				<div
-					className="rounded-t-4xl rounded-b-4xl bg-secondary p-6 w-screen flex flex-col gap-4 
-					h-[500px] overflow-y-auto
-				"
+					className={twMerge(
+						"rounded-t-4xl rounded-b-4xl bg-secondary p-6 w-screen flex flex-col gap-4  overflow-y-auto",
+						track.file ? "h-[550px] " : "h-full",
+					)}
 				>
 					{metaFiles.map((file) => (
 						<button

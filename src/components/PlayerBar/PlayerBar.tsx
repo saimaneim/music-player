@@ -1,3 +1,8 @@
+// components
+import Progress from "@/components/PlayerBar/Progress";
+
+// utils
+import truncate from "@/utils/truncate";
 // Icons
 import {
 	ArrowLeftIcon,
@@ -23,16 +28,14 @@ const PlayerBar = () => {
 	}, [track, isPlaying]);
 
 	return (
-		<section className="fixed bottom-0 left-0 z-50 bg-clip-padding backdrop-filter px-5 py-3 grid grid-row-2 grid-col-1 gap-2 items-center backdrop-blur-xs bg-secundary/40 bg-opacity-10 w-screen rounded-t-xl">
+		<section className="fixed bottom-0 left-0 z-50 bg-clip-padding backdrop-filter px-5 py-3 grid grid-row-2 grid-col-1 gap-2 items-center w-screen rounded-t-xl bg-background ">
 			<span className="grid grid-row-2 grid-col-2 space-x-2 justify-start items-end">
 				<img
-					className="row-span-2 rounded-lg"
+					className="row-span-2 rounded-full size-12 object-contain bg-black"
 					src={track.picture}
 					alt="songIcon"
-					height={50}
-					width={50}
 				/>
-				<p className="font-semibold">{track.title}</p>
+				<p className="font-semibold">{truncate(track.title)}</p>
 				<p className="col-start-2">{track.artist}</p>
 			</span>
 			<div className="flex gap-3 place-self-end py-1">
@@ -50,11 +53,7 @@ const PlayerBar = () => {
 					<ArrowRightIcon />
 				</button>
 			</div>
-
-			<div className="bg-primary/30 rounded-2xl h-1 w-full col-span-2 flex items-center">
-				<div className="bg-primary rounded-2xl h-1 w-[10%]" />
-				<div className="bg-primary/80 rounded-full size-2" />
-			</div>
+			<Progress />
 		</section>
 	);
 };

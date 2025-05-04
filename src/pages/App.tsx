@@ -4,7 +4,7 @@ import PlayerBar from "@/components/PlayerBar/PlayerBar";
 
 export default function Page() {
 	return (
-		<main className="h-screen flex justify-center items-center pt-4">
+		<main className="h-screen flex justify-center items-center py-4">
 			<Albums />
 			<PermissionPrompt />
 			<PlayerBar />
